@@ -1,10 +1,11 @@
-<header class="bg-indigo-700 text-white w-full h-4rem flex align-items-center py-1 px-2">
-    <div class="h-full flex flex-auto flex-column justify-content-center">
-        <p class="text-2xl font-semibold">{{username}}</p>
-        <p class="text-sm">Developer</p>
+<header style="background-color: #f3f4f6" class="w-full h-4rem flex align-items-center py-1 px-4">
+    <div class="h-full flex flex-auto align-items-center gap-2">
+        <p-button pRipple (click)="toggleSidebar()" icon="pi pi-ellipsis-v" styleClass="p-button-rounded p-button-text"></p-button>
+        <p class="text-2xl font-semibold" style="color: #4b5563">Dashboard</p>
     </div>
     <div class="flex gap-2">
         <p-button class="btn" icon="pi pi-th-large" styleClass="p-button-rounded p-button-text"></p-button>
         <p-button icon="pi pi-cog" styleClass="p-button-rounded p-button-text"></p-button>
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" size="large" shape="circle"></p-avatar>
     </div>
 </header>

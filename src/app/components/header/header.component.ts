@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, Inject, Renderer2} from '@angular/core';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,22 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-    public username = "John Doe"
+    constructor(@Inject(DOCUMENT) private document: Document) {
+    }
+
+    public isOpen = true;
+
+    public value = ""
+
+    public toggleSidebar() {
+        if(this.isOpen) {
+            this.isOpen = !this.isOpen;
+            this.document.body.style.setProperty('--sidebar-width', '0');
+        } else {
+            this.isOpen = !this.isOpen;
+            this.document.body.style.setProperty('--sidebar-width', '12rem');
+        }
+    }
+
 
 }
